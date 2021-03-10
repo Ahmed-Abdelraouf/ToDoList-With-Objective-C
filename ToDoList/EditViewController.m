@@ -42,14 +42,19 @@
     updateVC.index = self->_index;
     updateVC.indexSearch = _indexSearch;
     updateVC.Update = self;
+    updateVC.onDoneBlock = ^(NSMutableDictionary * editDict) {self->_detailModelDict = editDict;
+        
+        };
     [self.navigationController presentViewController:updateVC animated:YES completion:nil];
     
 
-updateVC.onDoneBlock = ^(NSMutableDictionary * editDict) {[updateVC dismissViewControllerAnimated:YES completion:^{
+//updateVC.onDoneBlock = ^(NSMutableDictionary * editDict) {[updateVC dismissViewControllerAnimated:YES completion:^{
+//
+//        self->_detailModelDict =editDict;
+//    }];
+//    };
+  
 
-        self->_detailModelDict =editDict;
-    }];
-    };
 }
 
 - (void) back:(UIBarButtonItem *)sender {

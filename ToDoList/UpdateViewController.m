@@ -93,6 +93,7 @@
         [self->dict setObject:model.remainderDate forKey:@"date"];
         [self->_Update updateMehodDic:self->dict :self->_index.row :self->_indexSearch];
         self.onDoneBlock(self->dict);
+        [self dismissViewControllerAnimated:YES completion:nil];
     }];
     
     UIAlertAction * dontSaveBtn = [UIAlertAction actionWithTitle:@"Don't Save" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
